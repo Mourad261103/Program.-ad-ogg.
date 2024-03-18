@@ -1,0 +1,112 @@
+package LEZ1;
+import java.util.Scanner;
+
+
+public class test {
+
+    // ARRAY SONO OGG
+    public static void fill(int[] v, int value)
+    {
+        for (int i = 0; i <v.length ; i++) {
+            v[i]=value;
+        }
+    }
+    public static void main(String[] args) {
+
+       char grade='B';
+        switch (grade)//versione migliore cosi non ci si dimentica breack
+        {
+            case 'A' -> System.out.println("Excellent!");
+            case 'B', 'C' -> System.out.println("Well done");
+            case 'D' -> System.out.println("Danger zone");
+            default -> System.out.println("Invalid grade");
+        }
+
+        String[] cars={"punto","citroen","supra"};
+        for (int i = 0; i < cars.length ; i++)
+        {
+            System.out.println(cars[i]);
+        }
+
+        //meglio questo niente errori
+        for (String car : cars)
+        {
+            System.out.println(car);
+        }
+
+        //variabili riferimeto(una volta che definisco cosa c'è dentro non posso piu cambiare quante cose ci sono)
+        int[] a7={1,2,3,4,5};
+        String[] s1;
+
+        for (int i : a7)
+        {
+            System.out.println(i);
+        }
+        //posso cambiare cosa c'è dentro
+        a7[3]=2;
+
+        int[] a8= new int[10];//allochiamo array di 10 elementi  se niente vengono messi a 0
+        String[] v2=new String[10];//sono array di riferimento a ogg
+        //LE STRING NON POSSO ESSERE CAMBIATE
+
+
+        //LEGGERE DATI DA TASTIERA
+        Scanner scanner =new Scanner(System.in);
+        System.out.print("size array:");
+        int size=scanner.nextInt();
+        System.out.println(size);
+        int[] array=new int[size];
+        for (int i = 0; i <size ; i++)
+        {
+            System.out.print("next index"+ i +": ");
+            array[i]=scanner.nextInt();
+        }
+
+        // ARRAY SONO OGG
+        int[] w1={1,2,3,4,5,6};
+        fill(w1,77);//in questo caso e come passare il puntatore
+
+
+
+        //STRINGHE
+        String s3= new String("ciclo");//s3 e un riferimento a una ogg stringa(con sua allocazione memoria)
+        String s2= new String("ciclo");
+        String s5="ciao";//puoi vederle come stringhe normali
+        String s7="ciao";
+        String s4= new String("ciclo");
+
+        if (s5==s7)//vediamo solo se hanno stesso contenuto
+        {
+            System.out.println("indirizz =");
+        }
+
+        if (s3==s2)//vediamo solo se hanno riferimeto(puntano) a stesso ogg
+        {
+          System.out.println("indirizz =");
+        }
+        if (s3.equals((s4)))//con questo si vede se stesso contenuto
+        {
+            System.out.println("stesso contenuto");
+        }
+
+        //concatenazione stringhe
+
+        StringBuilder picio = new StringBuilder();
+        //String s6="";
+        for (int i = 0; i < 1000; i++)
+        {
+           // s6=s6 + "a";//in questo caso ad ogni iterazione si va creare una nuova strigna con una a in più e quella vecchia viene elimenata
+            picio.append('a');//con questa estendo memoria
+        }
+
+
+        //  OPERATORE +
+        int x=3;
+        System.out.println("PI= "+3.1415);
+        System.out.println("#student"+x);
+
+
+
+
+    }
+}
